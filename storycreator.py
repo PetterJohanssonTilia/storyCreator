@@ -18,5 +18,14 @@ for i, char in enumerate(story):
         words.add(word) #adds the word to the list
         start_of_word = -1 #resets start_of_word to -1 to find the next word
 
-print(words)
+answers = {} #stores the answers in a list
 
+for word in words:
+    answer = input("Enter a word for" + word + ": ") #loops through each word, the player inputs the answers
+    answers[word] = answer     #the current word is now the player input answer
+
+
+for word in words:
+    story = story.replace(word, answers[word]) #replaces the words set with the words from the answers dictionary
+
+print(story)
