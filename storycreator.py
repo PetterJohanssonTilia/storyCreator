@@ -3,7 +3,7 @@ with open("story.txt", "r") as storytxt:
     story = storytxt.read()
 
 #store the words
-words =[]
+words = set()
 start_of_word = -1
 target_start = "<"
 target_end = ">"
@@ -15,7 +15,7 @@ for i, char in enumerate(story):
 
     if char == target_end and start_of_word != -1: #Only targets words with -1 value
         word = story[start_of_word: i + 1] # adds the value of +1 to the word
-        words.append(word) #adds the word to the list
+        words.add(word) #adds the word to the list
         start_of_word = -1 #resets start_of_word to -1 to find the next word
 
 print(words)
